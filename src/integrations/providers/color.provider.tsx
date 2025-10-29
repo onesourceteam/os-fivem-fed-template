@@ -1,13 +1,10 @@
-import { Observe } from "os-fivem-fed-modules";
+import type { ReactNode } from "react";
 import { hexToRgb } from "@/utils/misc";
 import { primaryColor } from "@/stores/primary-color.store";
+import { useObserve } from "os-fivem-fed-modules";
 
-export default function ColorProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  Observe<string>("setColor", (c) => {
+export default function ColorProvider({ children }: { children: ReactNode }) {
+  useObserve<string>("setColor", (c) => {
     let color = c;
     if (c.startsWith("#")) {
       color = hexToRgb(c);

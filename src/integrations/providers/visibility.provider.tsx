@@ -1,4 +1,9 @@
-import { Listen, Observe, Post, isEnvBrowser } from "os-fivem-fed-modules";
+import {
+  Post,
+  isEnvBrowser,
+  useListen,
+  useObserve,
+} from "os-fivem-fed-modules";
 import { useLocation, useNavigate } from "@tanstack/react-router";
 
 import { cn } from "@/utils/misc";
@@ -12,17 +17,17 @@ export const VisibilityProvider = ({
   const location = useLocation();
   const navigate = useNavigate();
   const visible = location.pathname.includes("/ui");
-  Observe<boolean>("setVisibility", (n) => {
+  useObserve<boolean>("setVisibility", (n) => {
     if (n) {
       navigate({ to: "/ui" });
     } else {
       navigate({ to: "/" });
     }
   });
-  Observe<string>("setColor", (data) => {
+  useObserve<string>("setColor", (data) => {
     document.documentElement.style.setProperty("--primary-color", data);
   });
-  Listen<KeyboardEvent>("keydown", (e) => {
+  useListen<KeyboardEvent>("keydown", (e) => {
     if (visible && ["Escape"].includes(e.code)) {
       navigate({ to: "/" });
     }
