@@ -1,7 +1,7 @@
-import { Listen, Observe, Post, isEnvBrowser } from "fivem-frontend-lib";
+import { Listen, Observe, Post, isEnvBrowser } from "os-fivem-fed-modules";
 import { useLocation, useNavigate } from "@tanstack/react-router";
 
-import { cn } from "../../utils/misc";
+import { cn } from "@/utils/misc";
 import { useEffect } from "react";
 
 export const VisibilityProvider = ({

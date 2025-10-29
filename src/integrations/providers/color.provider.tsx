@@ -1,6 +1,6 @@
-import { Observe } from "fivem-frontend-lib";
-import { hexToRgb } from "../../utils/misc";
-import { primaryColor } from "../../stores/primary-color.store";
+import { Observe } from "os-fivem-fed-modules";
+import { hexToRgb } from "@/utils/misc";
+import { primaryColor } from "@/stores/primary-color.store";
 
 export default function ColorProvider({
   children,
