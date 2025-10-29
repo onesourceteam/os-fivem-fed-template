@@ -1,7 +1,7 @@
 {
-  "name": "react_boilerplate_2",
+  "name": "os-fivem-fed-modules",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.4.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
