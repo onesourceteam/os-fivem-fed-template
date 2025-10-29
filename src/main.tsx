@@ -1,20 +1,20 @@
-import "./styles/global.css";
+import "@/styles/global.css";
 
 import { RouterProvider, createRouter } from "@tanstack/react-router";
 
 import ColorProvider from "./integrations/providers/color.provider";
-import { Debugger } from "fivem-frontend-lib";
+import { Debugger } from "os-fivem-fed-modules";
 import ReactDOM from "react-dom/client";
 import { StrictMode } from "react";
 import { routeTree } from "./routeTree.gen";
-
-const router = createRouter({ routeTree });
 
 declare module "@tanstack/react-router" {
   interface Register {
     router: typeof router;
   }
 }
+
+const router = createRouter({ routeTree });
 
 new Debugger([
   {
