@@ -16,7 +16,7 @@
     "@tanstack/react-router-devtools": "^1.132.41",
     "@tanstack/react-store": "^0.7.7",
     "clsx": "^2.1.1",
-    "os-fivem-fed-modules": "^1.2.0",
+    "os-fivem-fed-modules": "^1.3.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "tailwind-merge": "^3.3.1",
