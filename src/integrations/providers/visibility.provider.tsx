@@ -1,7 +1,7 @@
 import {
   Post,
   isEnvBrowser,
-  useListen,
+  useKeyPress,
   useObserve,
 } from "os-fivem-fed-modules";
 import { useLocation, useNavigate } from "@tanstack/react-router";
@@ -27,11 +27,14 @@ export const VisibilityProvider = ({
   useObserve<string>("setColor", (data) => {
     document.documentElement.style.setProperty("--primary-color", data);
   });
-  useListen<KeyboardEvent>("keydown", (e) => {
-    if (visible && ["Escape"].includes(e.code)) {
+  useKeyPress(
+    "Escape",
+    () => {
+      console.log("aaa");
       navigate({ to: "/" });
-    }
-  });
+    },
+    { enabled: visible }
+  );
   useEffect(() => {
     if (!visible && !isEnvBrowser()) {
       Post.create("removeFocus");
