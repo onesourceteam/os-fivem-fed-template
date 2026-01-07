@@ -24,13 +24,9 @@ export const VisibilityProvider = ({
       navigate({ to: "/" });
     }
   });
-  useObserve<string>("setColor", (data) => {
-    document.documentElement.style.setProperty("--primary-color", data);
-  });
   useKeyPress(
     "Escape",
     () => {
-      console.log("aaa");
       navigate({ to: "/" });
     },
     { enabled: visible }

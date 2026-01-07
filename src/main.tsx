@@ -16,11 +16,17 @@ declare module "@tanstack/react-router" {
 
 const router = createRouter({ routeTree });
 
+new Debugger(
+  [
+    {
+      action: "setColor",
+      data: "#ff0000",
+    },
+  ],
+  0
+);
+
 new Debugger([
-  {
-    action: "setColor",
-    data: "#ff0000",
-  },
   {
     action: "setVisibility",
     data: true,
