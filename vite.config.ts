@@ -7,10 +7,10 @@ import { tanstackRouter } from "@tanstack/router-plugin/vite";
 export default defineConfig({
   plugins: [
     tanstackRouter({
-      target: 'react',
+      target: "react",
       autoCodeSplitting: true,
     }),
-    react()
+    react(),
   ],
   base: "./",
   server: {
@@ -20,10 +20,11 @@ export default defineConfig({
     outDir: "build",
     sourcemap: false,
     minify: "esbuild",
+    assetsDir: "",
   },
   resolve: {
     alias: {
-      "@": path.resolve("./src"),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
 });
