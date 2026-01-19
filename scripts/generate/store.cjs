@@ -32,7 +32,7 @@ function isValidPrimitive(type) {
 }
 
 function defaultValueFor(type) {
-  if (type === "string") return `"0, 0, 0"`;
+  if (type === "string") return `""`;
   if (type === "number") return `0`;
   if (type === "boolean") return `false`;
   return "undefined";
